@@ -7,6 +7,8 @@ const controller = require('../controller/controller');
 
 const axios = require('axios')
 
+axios.defaults.baseUrl = 'https://fresh-grocery.herokuapp.com/'
+
 //home route
 route.get('/',(req,res) =>{
     //make a get request to api/users
