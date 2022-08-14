@@ -10,7 +10,7 @@ const axios = require('axios')
 //home route
 route.get('/',(req,res) =>{
     //make a get request to api/users
-    axios.get('https://fresh-grocery.herokuapp.com//api/item')
+    axios.get('https://fresh-grocery.herokuapp.com/api/item')
         .then(function(response){
             console.log(response.data)
             res.render('index',{item: response.data});
@@ -26,8 +26,8 @@ route.get('/add-item',(req,res) =>{
 })
 
 //update item route
-route.get('https://fresh-grocery.herokuapp.com//update-items',(req,res) =>{
-    axios.get('/api/item', {params: {id: req.query.id}})
+route.get('/update-items',(req,res) =>{
+    axios.get('https://fresh-grocery.herokuapp.com/api/item', {params: {id: req.query.id}})
     .then(function(itemdata){
         res.render('update-items', {item: itemdata.data})
     })
